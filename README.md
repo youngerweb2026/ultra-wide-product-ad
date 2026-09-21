@@ -48,7 +48,28 @@
 
 ## 安装
 
-### 方法一：下载后让 Codex 安装
+### 方法一：复制给 Codex，自动安装（推荐）
+
+**把下面整段话复制到 Codex 对话框发送即可，无需手动下载或解压：**
+
+```text
+请帮我安装这个超广角运动产品广告 Skill：
+https://github.com/youngerweb2026/ultra-wide-product-ad/tree/main/skills/ultra-wide-product-ad
+
+请使用可用的 skill-installer，将链接中的完整文件夹安装为我的个人 Skill，包含 SKILL.md、agents 和 references。若没有安装工具，请按当前环境支持的 Skill 目录完成安装。已有同名 Skill 时，先比较版本，不要直接覆盖。安装后检查文件是否齐全，并告诉我如何调用；这次只安装，不生成视频。
+```
+
+Codex 用户也可以发送这条简短指令：
+
+```text
+$skill-installer install https://github.com/youngerweb2026/ultra-wide-product-ad/tree/main/skills/ultra-wide-product-ad
+```
+
+安装完成后，在下一轮对话输入 `$ultra-wide-product-ad` 查找；如果没有出现，可重新启动 Codex 后再试。
+
+这种方式需要智能体能联网下载文件，并有本地 Skill 安装权限。其他支持 Skill 的智能体也可以接收上面的自然语言安装请求，但安装目录与兼容性需由它检查。安装本 Skill 不会自动安装或登录 LibTV；生成视频仍需先连接 LibTV 并具备可用额度。
+
+### 方法二：下载后让 Codex 安装
 
 下载并解压仓库，将其中的 `skills/ultra-wide-product-ad` 文件夹交给 Codex，然后说：
 
@@ -58,7 +79,7 @@
 
 安装后输入 `$ultra-wide-product-ad` 查找。没有出现时重新启动 Codex，再检查是否多套了一层目录。
 
-### 方法二：手动放入 Skill 目录
+### 方法三：手动放入 Skill 目录
 
 把完整的 `ultra-wide-product-ad` 文件夹复制到：
 
