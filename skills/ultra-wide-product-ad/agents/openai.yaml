@@ -1,0 +1,4 @@
+interface:
+  display_name: "超广角运动产品广告"
+  short_description: "单张产品图生成七镜头高速广告，自适应配色与文案，确认后调用 LibTV"
+  default_prompt: "使用 $ultra-wide-product-ad，把这张产品图制作成约10秒的超广角运动广告；先分析产品并询问文案选择，展示完整提示词，等我确认后再通过 LibTV 生成。"
