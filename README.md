@@ -1,6 +1,6 @@
 # 超广角运动产品广告 Skill
 
-**给一张产品图，让 Codex 帮你设计一条有速度感的产品广告。**
+**给一张产品图，让 AI 智能体帮你设计一条有速度感的产品广告。**
 
 作者：不二何
 
@@ -36,55 +36,44 @@
 
 | 准备项 | 说明 |
 | --- | --- |
-| Codex | 能使用本地 Skill，并能读取你提供的产品图片 |
+| 支持 Skill 的 AI 智能体 | 例如 Codex、Claude Code 等；需能使用本地 Skill，并读取你提供的产品图片 |
 | 一张清晰产品图 | 主体完整、颜色和细节可辨；使用自己有权使用的素材 |
-| LibTV 插件 / 工具连接 | 完整生成流程需要在 Codex 中连接并登录；只复制 Skill 不会自动安装连接 |
+| LibTV 插件 / 工具连接 | 完整生成流程需要在当前智能体中连接并登录；只复制 Skill 不会自动安装连接 |
 | 可用的视频生成额度 | 当前账号须能调用 Minimax H3；生成消耗平台额度，Skill 不附带免费次数 |
-| 广告文案（可选） | 可指定标题和标语，也可让 Codex 拟定 |
+| 广告文案（可选） | 可指定标题和标语，也可让智能体拟定 |
 
-只做产品分析、分镜和提示词时，可以不连接 LibTV。生成前请让 Codex 检查连接、模型、规格和用量。若环境缺少 LibTV 连接，先按插件提供方的说明配置，不要把普通网页登录视为已经接通 Codex 工具。
+只做产品分析、分镜和提示词时，可以不连接 LibTV。生成前请让智能体检查连接、模型、规格和用量。若环境缺少 LibTV 连接，先按插件提供方的说明配置，不要把普通网页登录视为已经接通智能体的工具。
 
 不需要提前安装 C4D、After Effects 或剪映。后期文字修复、配乐或剪辑可以另行处理；这套 Skill 本身不包含这些软件。
 
 ## 安装
 
-### 方法一：复制给 Codex，自动安装（推荐）
+### 方法一：复制给智能体，自动安装（推荐）
 
-**把下面整段话复制到 Codex 对话框发送即可，无需手动下载或解压：**
+**将下面整段话复制到你使用的智能体对话框中发送，例如 Codex、Claude Code，或其他支持 Skill 安装的 Agent：**
 
 ```text
 请帮我安装这个超广角运动产品广告 Skill：
 https://github.com/youngerweb2026/ultra-wide-product-ad/tree/main/skills/ultra-wide-product-ad
 
-请使用可用的 skill-installer，将链接中的完整文件夹安装为我的个人 Skill，包含 SKILL.md、agents 和 references。若没有安装工具，请按当前环境支持的 Skill 目录完成安装。已有同名 Skill 时，先比较版本，不要直接覆盖。安装后检查文件是否齐全，并告诉我如何调用；这次只安装，不生成视频。
+请根据你当前环境支持的安装方式，将链接中的完整文件夹安装为我的个人 Skill，保留 SKILL.md、agents 和 references。已有同名 Skill 时，先比较版本，不要直接覆盖。安装后检查文件是否齐全，并告诉我在你这里如何调用；这次只安装，不生成视频。
 ```
 
-Codex 用户也可以发送这条简短指令：
+无需提前手动下载或解压。智能体会根据自己的环境选择安装工具和目录；需要它能够联网下载文件，并有本地安装权限。
+
+安装本 Skill 不会自动安装或登录 LibTV。产品分析、分镜和提示词可以先使用；自动生成视频需要当前智能体能连接 LibTV，并具备可用额度。
+
+### 方法二：下载后让智能体安装
+
+下载并解压仓库，将其中的 `skills/ultra-wide-product-ad` 文件夹交给你使用的智能体，然后说：
 
 ```text
-$skill-installer install https://github.com/youngerweb2026/ultra-wide-product-ad/tree/main/skills/ultra-wide-product-ad
+请把这个 ultra-wide-product-ad 文件夹安装为我的个人 Skill，使用你当前环境支持的安装目录，检查 SKILL.md、agents 和 references 是否完整。如果已有同名 Skill，先说明版本差异，不要直接覆盖。安装完成后告诉我如何调用。
 ```
-
-安装完成后，在下一轮对话输入 `$ultra-wide-product-ad` 查找；如果没有出现，可重新启动 Codex 后再试。
-
-这种方式需要智能体能联网下载文件，并有本地 Skill 安装权限。其他支持 Skill 的智能体也可以接收上面的自然语言安装请求，但安装目录与兼容性需由它检查。安装本 Skill 不会自动安装或登录 LibTV；生成视频仍需先连接 LibTV 并具备可用额度。
-
-### 方法二：下载后让 Codex 安装
-
-下载并解压仓库，将其中的 `skills/ultra-wide-product-ad` 文件夹交给 Codex，然后说：
-
-```text
-请把这个 ultra-wide-product-ad 文件夹安装为我的个人 Skill，检查 SKILL.md 和 references 是否完整。如果已有同名 Skill，先说明版本差异，不要直接覆盖。
-```
-
-安装后输入 `$ultra-wide-product-ad` 查找。没有出现时重新启动 Codex，再检查是否多套了一层目录。
 
 ### 方法三：手动放入 Skill 目录
 
-把完整的 `ultra-wide-product-ad` 文件夹复制到：
-
-- 个人使用：`~/.agents/skills/ultra-wide-product-ad/`
-- 仅当前项目使用：`你的项目/.agents/skills/ultra-wide-product-ad/`
+把完整的 `ultra-wide-product-ad` 文件夹复制到你所用智能体的个人或项目 Skill 目录。不同智能体的目录和加载方式可能不同，请以对应工具的说明为准，也可以直接让智能体帮你确定。
 
 正确结构应当是：
 
@@ -100,31 +89,31 @@ ultra-wide-product-ad/
     └── acceptance.md
 ```
 
-不要只复制 `SKILL.md`，它会引用其他文件。已有同名文件夹时先备份或比较，不要直接覆盖。目录及发现机制依据 [OpenAI 官方 Skill 文档](https://learn.chatgpt.com/docs/build-skills)，核对日期：2026-09-21。
+不要只复制 `SKILL.md`，它会引用其他文件。已有同名文件夹时先备份或比较，不要直接覆盖。
 
 ## 一句话调用
 
 上传产品图，然后发送：
 
 ```text
-使用 $ultra-wide-product-ad，把这张产品图做成约 10 秒的超广角运动广告。文案由你拟定，先展示完整提示词和生成参数，等我确认后再通过 LibTV 生成。
+使用 ultra-wide-product-ad Skill，把这张产品图做成约 10 秒的超广角运动广告。文案由你拟定，先展示完整提示词和生成参数，等我确认后再通过 LibTV 生成。
 ```
 
 如果暂时只要提示词：
 
 ```text
-使用 $ultra-wide-product-ad，分析这张产品图并写出七镜头广告提示词。只交付方案，不提交视频生成。
+使用 ultra-wide-product-ad Skill，分析这张产品图并写出七镜头广告提示词。只交付方案，不提交视频生成。
 ```
 
 如果已有文案：
 
 ```text
-使用 $ultra-wide-product-ad，主标题用 FULL SWING，标语用 OWN YOUR GAME。配色跟随产品，先给我完整提示词和本次生成范围。
+使用 ultra-wide-product-ad Skill，主标题用 FULL SWING，标语用 OWN YOUR GAME。配色跟随产品，先给我完整提示词和本次生成范围。
 ```
 
 ## 实际使用流程
 
-1. **提供产品图。** Codex 给出产品分析与配色建议，标明需要 AI 补全的不可见区域。
+1. **提供产品图。** 智能体给出产品分析与配色建议，标明需要 AI 补全的不可见区域。
 2. **选文案。** 选择建议方案或提供自己的文字；已经要求自动拟定时会直接编入方案。
 3. **看完整生成包。** 确认七镜头提示词、参考图、文案、模型、时长、画幅、声音方案和本次用量。
 4. **确认后生成。** 通过 LibTV 提交一条完整广告，不默认拆成七条收费视频。
